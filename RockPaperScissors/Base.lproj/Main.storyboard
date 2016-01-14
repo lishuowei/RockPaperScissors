@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Select View Controller-->
@@ -89,51 +90,109 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhK-KR-QEt">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Play Again!"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="163" y="391" width="76" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="playAgain" destination="wdA-Ff-YSq" eventType="touchUpInside" id="4iQ-5d-OR0"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tie" translatesAutoresizingMaskIntoConstraints="NO" id="m7l-bJ-eat">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="84" y="118" width="240" height="227"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="91" id="8ap-aR-DOR"/>
+                                    <constraint firstAttribute="height" constant="200" id="9sp-MT-bpc"/>
+                                    <constraint firstAttribute="width" constant="200" id="I7E-le-s9b"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8ap-aR-DOR"/>
+                                        <exclude reference="9sp-MT-bpc"/>
+                                        <exclude reference="I7E-le-s9b"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="8ap-aR-DOR"/>
+                                        <include reference="9sp-MT-bpc"/>
+                                        <include reference="I7E-le-s9b"/>
+                                    </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9q-L8-fse">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Result" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G59-TT-0sc">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="61" y="371" width="286" height="21"/>
-                                </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhK-KR-QEt">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Play Again!"/>
+                                <connections>
+                                    <action selector="playAgain" destination="wdA-Ff-YSq" eventType="touchUpInside" id="4iQ-5d-OR0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G59-TT-0sc" firstAttribute="top" secondItem="m7l-bJ-eat" secondAttribute="bottom" constant="8" id="38W-r8-0QF"/>
+                            <constraint firstItem="m7l-bJ-eat" firstAttribute="leading" secondItem="bYY-nd-yVn" secondAttribute="leadingMargin" constant="64" id="5AW-jo-zr2"/>
+                            <constraint firstItem="m7l-bJ-eat" firstAttribute="centerX" secondItem="bYY-nd-yVn" secondAttribute="centerX" id="7Lw-Vy-yyG"/>
+                            <constraint firstItem="m7l-bJ-eat" firstAttribute="leading" secondItem="bYY-nd-yVn" secondAttribute="leadingMargin" constant="134.5" id="PVK-Ee-oKg"/>
+                            <constraint firstItem="m7l-bJ-eat" firstAttribute="width" secondItem="bYY-nd-yVn" secondAttribute="width" id="Ryt-30-I2w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="m7l-bJ-eat" secondAttribute="trailing" constant="56" id="ThD-Dd-q79"/>
+                            <constraint firstItem="m7l-bJ-eat" firstAttribute="centerX" secondItem="bYY-nd-yVn" secondAttribute="centerX" id="Vcv-Ug-uxH"/>
+                            <constraint firstItem="G59-TT-0sc" firstAttribute="centerX" secondItem="bYY-nd-yVn" secondAttribute="centerX" id="h6e-nO-6lJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="m7l-bJ-eat" secondAttribute="trailing" constant="134.5" id="hKq-6J-b3C"/>
+                            <constraint firstItem="m7l-bJ-eat" firstAttribute="centerX" secondItem="bYY-nd-yVn" secondAttribute="centerX" id="n0L-zx-TCu"/>
+                            <constraint firstItem="m7l-bJ-eat" firstAttribute="centerY" secondItem="bYY-nd-yVn" secondAttribute="centerY" id="nja-7A-eqi"/>
+                            <constraint firstItem="dhK-KR-QEt" firstAttribute="centerX" secondItem="bYY-nd-yVn" secondAttribute="centerX" id="pPk-Xm-GQE"/>
+                            <constraint firstItem="m7l-bJ-eat" firstAttribute="top" secondItem="Hbq-eS-YBc" secondAttribute="bottom" constant="98" id="uR9-Mc-omU"/>
+                            <constraint firstItem="dhK-KR-QEt" firstAttribute="top" secondItem="G59-TT-0sc" secondAttribute="bottom" constant="27.5" id="xss-BN-DSw"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="dhK-KR-QEt"/>
                                 <exclude reference="m7l-bJ-eat"/>
-                                <exclude reference="g9q-L8-fse"/>
+                                <exclude reference="G59-TT-0sc"/>
+                                <exclude reference="dhK-KR-QEt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="5AW-jo-zr2"/>
+                                <exclude reference="7Lw-Vy-yyG"/>
+                                <exclude reference="PVK-Ee-oKg"/>
+                                <exclude reference="Ryt-30-I2w"/>
+                                <exclude reference="ThD-Dd-q79"/>
+                                <exclude reference="Vcv-Ug-uxH"/>
+                                <exclude reference="hKq-6J-b3C"/>
+                                <exclude reference="n0L-zx-TCu"/>
+                                <exclude reference="nja-7A-eqi"/>
+                                <exclude reference="uR9-Mc-omU"/>
+                                <exclude reference="38W-r8-0QF"/>
+                                <exclude reference="h6e-nO-6lJ"/>
+                                <exclude reference="pPk-Xm-GQE"/>
+                                <exclude reference="xss-BN-DSw"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="dhK-KR-QEt"/>
                                 <include reference="m7l-bJ-eat"/>
-                                <include reference="g9q-L8-fse"/>
+                                <include reference="G59-TT-0sc"/>
+                                <include reference="dhK-KR-QEt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="5AW-jo-zr2"/>
+                                <exclude reference="7Lw-Vy-yyG"/>
+                                <exclude reference="PVK-Ee-oKg"/>
+                                <exclude reference="Ryt-30-I2w"/>
+                                <exclude reference="ThD-Dd-q79"/>
+                                <exclude reference="Vcv-Ug-uxH"/>
+                                <exclude reference="hKq-6J-b3C"/>
+                                <include reference="n0L-zx-TCu"/>
+                                <include reference="nja-7A-eqi"/>
+                                <exclude reference="uR9-Mc-omU"/>
+                                <include reference="38W-r8-0QF"/>
+                                <include reference="h6e-nO-6lJ"/>
+                                <include reference="pPk-Xm-GQE"/>
+                                <include reference="xss-BN-DSw"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="resultImage" destination="m7l-bJ-eat" id="BON-b6-3mH"/>
-                        <outlet property="resultLabel" destination="g9q-L8-fse" id="HY6-eR-xzp"/>
+                        <outlet property="resultLabel" destination="G59-TT-0sc" id="T2L-bf-cIM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4m-lo-UTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
